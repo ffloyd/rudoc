@@ -1,4 +1,4 @@
-require "rudoc/version"
+require 'rudoc/version'
 
 module Rudoc
   class Error < StandardError; end
