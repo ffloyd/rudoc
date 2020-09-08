@@ -12,3 +12,10 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 end
+
+RSpec.shared_context 'with helpers' do
+  include Support::Helpers
+  extend Support::LetHelpers
+end
+
+Dir[File.expand_path('support/*.rb', __dir__)].sort.each { |f| require f }

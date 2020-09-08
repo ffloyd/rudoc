@@ -1,28 +1,22 @@
 module Rudoc
   module Registry
-    @registered = {}
-    @inheritance_map = {}
-
     class << self
-      attr_reader :inheritance_map
+      attr_reader :relations
 
       def add(mod)
-        @registered[mod] = true
+        @registered.add(mod)
       end
 
       def registered?(mod)
-        @registered.key?(mod)
-      end
-
-      def add_inheritance(from, to)
-        inheritance_map[from] ||= []
-        inheritance_map[from] << to unless inheritance_map[from].include?(to)
+        @registered.include?(mod)
       end
 
       def reset!
-        @registered = {}
-        @inheritance_map = {}
+        @registered = Set.new
+        @relations = ::Rudoc::Relations.new
       end
     end
+
+    reset!
   end
 end
