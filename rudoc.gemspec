@@ -30,7 +30,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec', '~> 3.0'
 
   # linters... helps you think less
-  spec.add_development_dependency 'reek'
   spec.add_development_dependency 'rubocop'
   spec.add_development_dependency 'rubocop-md'
   spec.add_development_dependency 'rubocop-performance'
